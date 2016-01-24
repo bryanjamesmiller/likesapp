@@ -2,9 +2,7 @@
 
 @section('content')
     @foreach($articles as $article)
-        <div class="text-center header_bottom">
-            <h1 class="bg-info header_size">{{$article->title}}</h1>
-        </div>
+        @include('articles._headings', ['title' => $article->title])
 
         <div class="row">
             <div class="col-xs-12">
