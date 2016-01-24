@@ -21,7 +21,7 @@ class ArticleController extends Controller
     {
         if($request->ajax()){
             $article = Article::findOrFail($request->input('id'));
-            $article->likes = $request->input('size');
+            $article->likes = $request->input('likes');
             $article->save();
             return $request->all();
         }

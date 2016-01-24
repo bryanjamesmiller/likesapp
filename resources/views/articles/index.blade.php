@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <span class="liked_btn">
-                    <button class="btn btn-default vote_btn"><span class="number">{{$article->likes}}</span>&nbsp;Likes
+                    <button class="btn btn-default vote_btn"><span class="oldNumLikes">{{$article->likes}}</span>&nbsp;Likes
                         <span class="article_id">{{$article->id}}</span>
                     </button>
                 </span>
@@ -28,23 +28,18 @@
         $(document).ready(function(){
 
             $('.vote_btn').click(function(e) {
-                var url = "/button";
+                var newNumLikes = parseInt($(this).find(".oldNumLikes").text()) + 1;
+                var article_id = parseInt($(this).find(".article_id").text());
+
                 var $post = {};
-                var newNum = parseInt($(this).find(".number").text()) + 1;
-                var articleID = parseInt($(this).find(".article_id").text());
-                console.log(articleID);
-                $post.size = newNum;
-                $post.id = articleID;
-                $(this).parent().html('<button id="vote" class="btn btn-success">' + newNum + ' Liked!</button>');
+                $post.likes = newNumLikes;
+                $post.id = article_id;
+                $(this).parent().html('<button id="vote" class="btn btn-success">' + newNumLikes + ' Liked!</button>');
 
                 $.ajax({
                     type: "POST",
-                    url: url,
-                    data: $post,
-                    cache: false,
-                    success: function(data){
-                        return data;
-                    }
+                    url: "/button",
+                    data: $post
                 });
             });
         });
