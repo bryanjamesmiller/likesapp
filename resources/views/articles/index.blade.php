@@ -2,9 +2,10 @@
 
 @section('content')
     @foreach($articles as $article)
-        <div class="jumbotron header_bottom">
-            <h1>{{$article->title}}</h1>
+        <div class="text-center header_bottom">
+            <h1 class="bg-info header_size">{{$article->title}}</h1>
         </div>
+
         <div class="row">
             <div class="col-xs-12">
                 <p>{{$article->description}}</p>
@@ -13,7 +14,9 @@
         <div class="row">
             <div class="col-xs-12">
                 <span class="liked_btn">
-                    <button class="btn btn-default vote_btn"><span class="oldNumLikes">{{$article->likes}}</span>&nbsp;Likes
+                    <button class="btn btn-success vote_btn">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;
+                        <span class="oldNumLikes">{{$article->likes}}</span>&nbsp;Likes
                         <span class="article_id">{{$article->id}}</span>
                     </button>
                 </span>
@@ -34,7 +37,7 @@
                 var $post = {};
                 $post.likes = newNumLikes;
                 $post.id = article_id;
-                $(this).parent().html('<button id="vote" class="btn btn-success">' + newNumLikes + ' Liked!</button>');
+                $(this).parent().html('<button id="vote" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;' + newNumLikes + ' Liked!</button>');
 
                 $.ajax({
                     type: "POST",
