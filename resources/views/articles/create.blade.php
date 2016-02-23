@@ -5,8 +5,6 @@
 
     <form method="POST" action="/article">
 
-        <div class="well">
-
             <div class="row">
                 {{ csrf_field() }}
                 <div class="col-md-12">

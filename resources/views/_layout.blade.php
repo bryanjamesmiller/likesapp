@@ -5,7 +5,6 @@
     <title>LikesApp</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
 </head>
 <body>
 
