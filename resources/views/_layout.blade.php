@@ -23,9 +23,14 @@
             <ul class="nav navbar-nav">
                 <li><a href="/article/create">Create an article</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
+
+{{--Just adding some test content for repoman FTP testing class--}}
+{{--with Github.--}}
+
+
 
 <div class="container">
     @yield('content')
