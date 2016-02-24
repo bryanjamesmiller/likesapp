@@ -17,7 +17,6 @@ class User extends Authenticatable
 
     /**
      * The attributes excluded from the model's JSON form.
-     * Just modifying something for Repoman test
      *
      * @var array
      */
